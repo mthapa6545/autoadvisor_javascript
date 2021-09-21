@@ -8,12 +8,30 @@ function upload(inputData) {
             for (var i = 0; i < rows.length; i++) {
                 var cells = rows[i].split("|");
                 if (cells.length > 1) {
-                    var row = table.insertRow(-1);
+                    var row = table.insertRow();
                     for (var j = 0; j < cells.length; j++) {
-                        var cell = row.insertCell(-1);
+                        var cell = row.insertCell();
                         cell.innerHTML = cells[j];
                     }
                 }
+                $('.semester-dropdown-column').append('<select class="semester-dropdown" id="size_select">\
+  <option>Select</option>\
+  <option>Fall 2020</option>\
+  <option>Fall2021</option>\
+  <option>Spring2020</option>\
+  <option>Spring2021</option>\
+  <option>Summer2020</option>\
+  <option>Summer2021</option>\
+</select><br/>');
+                          $('.section-dropdown-column').append('<select class="semester-dropdown" id="size_select">\
+  <option>Select</option>\
+  <option>A</option>\
+  <option>B</option>\
+  <option>C</option>\
+  <option>D</option>\
+  <option>E</option>\
+  <option>F</option>\
+</select><br/>');
             }
             var dvCSV = document.getElementById("fileDiv");
             dvCSV.innerHTML = "";
@@ -22,5 +40,34 @@ function upload(inputData) {
         reader.readAsText(fileUpload);
     } else {
         alert("This browser does not support HTML5.");
+
     }
 }
+
+function exportTableToCSV(filename) {
+    var csv = [];
+    var rows = document.querySelectorAll("table tr");
+    
+    for (var i = 0; i < rows.length; i++) {
+        var row = [], cols = rows[i].querySelectorAll("td, th");
+        
+        for (var j = 0; j < cols.length; j++) 
+            row.push(cols[j].innerText);
+        
+        csv.push(row.join(","));        
+    }
+
+    // Download CSV file
+    downloadCSV(csv.join("\n"), filename);
+}
+  //hides dropdown content
+  $(".size_chart").hide();
+  
+
+  
+  //listen to dropdown for change
+  $("#size_select").change(function(){
+    //rehide content on change
+    $('.size_chart').hide();
+
+  });
