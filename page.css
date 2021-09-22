@@ -7,21 +7,30 @@
   /* Style the links inside the navigation bar */
   .topnav a {
     float: left;
-    color: #f2f2f2;
+    color: #b66c6c;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
+    text-decoration: 1;
     font-size: 17px;
   }
   
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: #ddd;
+    background-color: rgb(130, 137, 228);
     color: black;
   }
   
   /* Add a color to the active/current link */
   .topnav a.active {
     background-color: #04AA6D;
-    color: white;
+    color: rgb(174, 150, 238);
   }
+  .row{
+     margin: 0;
+  }
+.semester-dropdown{
+  border: 1;
+}
+#fileDiv{
+  padding-bottom: 10px;
+}
