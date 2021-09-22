@@ -17,11 +17,14 @@ function upload(inputData) {
                 $('.semester-dropdown-column').append('<select class="semester-dropdown" id="size_select">\
   <option>Select</option>\
   <option>Fall 2020</option>\
-  <option>Fall2021</option>\
-  <option>Spring2020</option>\
-  <option>Spring2021</option>\
-  <option>Summer2020</option>\
-  <option>Summer2021</option>\
+  <option>Fall 2021</option>\
+  <option>Spring 2020</option>\
+  <option>Spring 2021</option>\
+  <option>Summer 2020</option>\
+  <option>Summer 2021</option>\
+  <option>Fall 2022</option>\
+  <option>Spring 2022</option>\
+  <option>Summer 2022</option>\
 </select><br/>');
                           $('.section-dropdown-column').append('<select class="semester-dropdown" id="size_select">\
   <option>Select</option>\
